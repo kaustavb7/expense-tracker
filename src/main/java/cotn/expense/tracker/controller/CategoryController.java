@@ -1,15 +1,13 @@
 package cotn.expense.tracker.controller;
 
+import cotn.expense.tracker.exception.WebException;
 import cotn.expense.tracker.model.Category;
 import cotn.expense.tracker.model.UserDetails;
 import cotn.expense.tracker.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author kaustavbasu
@@ -28,5 +26,17 @@ public class CategoryController {
 
         categoryService.saveCategory(category);
         return ResponseEntity.status(HttpStatus.CREATED).body(category);
+    }
+
+    @DeleteMapping("/delete")
+    public void deleteCategory(@RequestBody Category category) {
+        try{
+            categoryService.deleteCategory(category);
+        }
+        catch (WebException exception)
+        {
+            throw new WebException("Category Details Entity is not valid");
+        }
+
     }
 }

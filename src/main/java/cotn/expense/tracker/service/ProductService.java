@@ -9,5 +9,5 @@ import cotn.expense.tracker.model.Product;
  */
 public interface ProductService {
 
-    public Product saveProduct(Product product);
+    public Product saveProduct(Product product, Long category_id);
 }

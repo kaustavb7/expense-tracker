@@ -8,7 +8,7 @@ import java.util.List;
  * @Date 8/9/20
  * @Time 3:09 PM
  */
-@Entity
+@Entity(name = "category")
 @Table(name="et_category")
 public class Category {
 
@@ -19,8 +19,8 @@ public class Category {
     private String description;
     private Double totalExpense;
 
-    @OneToMany(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    @OneToMany(mappedBy = "category", cascade = CascadeType.REMOVE,orphanRemoval = true)
+    //@JoinColumn(name = "category_id", referencedColumnName = "id")
     private List<Product> products;
 
     public Category() {

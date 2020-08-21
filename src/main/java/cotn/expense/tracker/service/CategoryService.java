@@ -10,5 +10,7 @@ import cotn.expense.tracker.model.Category;
 public interface CategoryService {
 
     public Category saveCategory(Category category);
+    public void deleteCategory(Category category);
+
 
 }
