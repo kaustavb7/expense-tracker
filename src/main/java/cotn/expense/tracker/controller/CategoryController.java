@@ -2,7 +2,6 @@ package cotn.expense.tracker.controller;
 
 import cotn.expense.tracker.exception.WebException;
 import cotn.expense.tracker.model.Category;
-import cotn.expense.tracker.model.UserDetails;
 import cotn.expense.tracker.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

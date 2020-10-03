@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="et_users")
-public class UserDetails {
+public class UserModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class UserDetails {
     private String email;
     private String password;
 
-    public UserDetails() {
+    public UserModel() {
     }
 
     public Long getId() {
