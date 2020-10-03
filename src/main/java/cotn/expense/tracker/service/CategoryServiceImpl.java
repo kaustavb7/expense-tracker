@@ -1,7 +1,6 @@
 package cotn.expense.tracker.service;
 
 import cotn.expense.tracker.model.Category;
-import cotn.expense.tracker.model.UserDetails;
 import cotn.expense.tracker.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
